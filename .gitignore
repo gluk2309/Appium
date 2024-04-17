@@ -1,0 +1,16 @@
+# Папки
+.gradle
+.idea
+build
+gradle
+
+# Файлы
+gradlew
+gradlew.bat
+
+# Проектные файлы
+settings.gradle
+
+
+
+*.iml
