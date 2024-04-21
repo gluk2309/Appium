@@ -40,15 +40,20 @@ public class SampleTest {
 
     @Test
     public void emptyLineTest() {
-        String text = "Привет, UiAutomator!";
+        String emptyText = "   ";
+        String heading = driver.findElementById("ru.netology.testing.uiautomator:id/textToBeChanged").getText();
 
-        var el5 = driver.findElementById("ru.netology.testing.uiautomator:id/buttonChange");
-        el5.isDisplayed();
-        el5.click();
-        var el6 = driver.findElementById("ru.netology.testing.uiautomator:id/textToBeChanged");
-        el6.isDisplayed();
-        String actualText = el6.getText();
-        Assertions.assertTrue(actualText.contains("UiAutomator"), "Текст не содержит 'UiAutomator'");
+            var el1 = driver.findElementById("ru.netology.testing.uiautomator:id/userInput");
+            el1.isDisplayed();
+            el1.click();
+            el1.sendKeys(emptyText);
+            var el2 = driver.findElementById("ru.netology.testing.uiautomator:id/buttonChange");
+            el2.isDisplayed();
+            el2.click();
+            var el3 = driver.findElementById("ru.netology.testing.uiautomator:id/textToBeChanged");
+            el3.isDisplayed();
+
+            Assertions.assertEquals(heading, el3.getText());
 
     }
 
